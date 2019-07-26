@@ -12,13 +12,13 @@ const urls = [ "https://github.com/GoogleChrome/puppeteer/blob/master/README.md"
 
 const browser = await pp.launch({
   args: [ '--disable-gpu'
-  | ¦ ┆ , '--disable-dev-shm-usage'
-  | ¦ ┆ , '--disable-setuid-sandbox'
-  | ¦ ┆ , '--no-first-run'
-  | ¦ ┆ , '--no-sandbox'
-  | ¦ ┆ , '--no-zygote'
-  | ¦ ┆ , '--single-process'
-  | ¦ ┆ ]
+        , '--disable-dev-shm-usage'
+        , '--disable-setuid-sandbox'
+        , '--no-first-run'
+        , '--no-sandbox'
+        , '--no-zygote'
+        , '--single-process'
+        ]
 , headless: false
 }); // debug用途にheadlessをfalseにしてgui表示させてる.
 const tabs    = await Promise.all([...Array(100)].map( (_, i) => browser.newPage() )); // テキトーに100枚バっとtabを開いてる.
